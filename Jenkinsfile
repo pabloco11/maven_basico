@@ -36,7 +36,7 @@ pipeline {
                 SCANNER_HOME = tool 'Sonarqube Scan'
             }
             steps {
-                withSonarQubeEnv(credentialsId: 'SecretSonarQube', installationName: 'SonarQube Scanner') {
+                withSonarQubeEnv(credentialsId: 'SecretSonarQube', installationName: 'SonarQube') {
                     bat '''$SONARQUBE-HOME/bin/windows-x86-64 \
                         //Se configura el repositorio con las configuraciones de Nexus
                         -Dsonar.projectKey=Ejercicio M3-L6 \
