@@ -36,16 +36,19 @@ pipeline {
                 SCANNER_HOME = tool 'Sonarqube Scan'
             }
             steps {
-                withSonarQubeEnv(credentialsId: 'SecretSonarQube', installationName: 'SonarQube') {
-                    bat '''%SONARQUBE_HOME/bin/windows-x86-64 \
-                        //Se configura el repositorio con las configuraciones de Nexus
-                        -Dsonar.projectKey=Ejercicio M3-L6 \
-                        -Dsonar.projectName=Ejercicio M3-L6 \
-                        -Dsonar.sources=src/ \
-                        -Dsonar.java.binaries=target/classes/ \
-                        -Dsonar.exclusions=src/test/java/****/*.java \
-                        -Dsonar.projectVersion=${BUILD_NUMBER}-${GIT_COMMIT_SHORT}'''
-                }
+                   withSonarQubeEnv('My SonarQube Server') { // If you have configured more than one global server connection, you can specify its name
+      sh "${scannerHome}/bin/sonar-scanner"
+    }
+        //        withSonarQubeEnv(credentialsId: 'SecretSonarQube', installationName: 'SonarQube') {
+          //          bat '''%SONARQUBE_HOME/bin/windows-x86-64 \
+            //            //Se configura el repositorio con las configuraciones de Nexus
+              //          -Dsonar.projectKey=Ejercicio M3-L6 \
+                //        -Dsonar.projectName=Ejercicio M3-L6 \
+                  //      -Dsonar.sources=src/ \
+                      //  -Dsonar.java.binaries=target/classes/ \
+                    //    -Dsonar.exclusions=src/test/java/****/*.java \
+                  //      -Dsonar.projectVersion=${BUILD_NUMBER}-${GIT_COMMIT_SHORT}'''
+                //}
             }
         }
 
