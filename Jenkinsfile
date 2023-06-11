@@ -86,10 +86,4 @@ pipeline {
             }
         }
     }
-    
-    post {
-        success {
-            //slackSend(channel: "#fundamentos-devops", token: "", color: "good", message: ":smile: Prueba Ejecución Exitosa :smile: ")
-        }
-    }
 }
