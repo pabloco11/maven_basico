@@ -37,7 +37,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv(credentialsId: 'SecretSonarQube', installationName: 'SonarQube') {
-                    bat '''C:\Pablo\Software\Sonarqube\sonarqube-10.0.0.68432\bin\windows-x86-64 \
+                    bat '''SONARQUBE_HOME\bin\windows-x86-64 \
                         //Se configura el repositorio con las configuraciones de Nexus
                         -Dsonar.projectKey=Ejercicio M3-L6 \
                         -Dsonar.projectName=Ejercicio M3-L6 \
