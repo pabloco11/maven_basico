@@ -38,8 +38,8 @@ pipeline {
             steps {
                 withSonarQubeEnv(credentialsId: 'SecretSonarQube', installationName: 'SonarQube') {
                     sh '''$SCANNER_HOME/bin/sonar-scanner \
-                        -Dsonar.projectKey=Ejercicio M3-L6 \
-                        -Dsonar.projectName=Ejercicio M3-L6 \
+                        -Dsonar.projectKey=EjercicioM3-L6 \
+                        -Dsonar.projectName=EjercicioM3-L6 \
                         -Dsonar.sources=src/ \
                         -Dsonar.java.binaries=target/classes/ \
                         -Dsonar.exclusions=src/test/java/****/*.java \
