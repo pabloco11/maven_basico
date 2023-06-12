@@ -11,20 +11,20 @@ pipeline {
     }
 
     stages {
-        stage('inicio') { 
+        stage('inicio') {
             steps {
                 echo "Inicio"
             }
         }
 
-        stage('Contruccion') { 
+        stage('Contruccion') {
             steps {
                 echo "Construccion"
                 bat 'mvn -B package'
             }
         }
 
-        stage('Test') { 
+        stage('Test') {
             steps {
                 echo "Test"
                 bat 'mvn clean verify'
@@ -35,7 +35,7 @@ pipeline {
             environment {
                 SCANNER_HOME = tool 'Sonarqube Scan'
             }
-      
+            steps {
                 withSonarQubeEnv(credentialsId: 'SecretSonarQube', installationName: 'SonarQube') {
                     bat '''C:\Pablo\Software\Sonarqube\sonarqube-10.0.0.68432\bin\windows-x86-64 \
                         //Se configura el repositorio con las configuraciones de Nexus
