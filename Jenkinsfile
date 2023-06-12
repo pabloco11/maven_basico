@@ -85,4 +85,9 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            slackSend(channel: "#pruebasjenkins", token: "drmtM0r1aB8CgO0Sc4Fh0ZZN", color: "good", message: "funcionó")
+        }
+    }
 }
