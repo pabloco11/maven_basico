@@ -5,7 +5,7 @@ pipeline {
         // Configuración Nexus
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "localhost:8081/repository/RepositorioPrueba"
+        NEXUS_URL = "localhost:8081"
         NEXUS_REPOSITORY = "RepositorioPrueba"
         NEXUS_CREDENTIAL_ID = "Nexus_Credential"
     }
