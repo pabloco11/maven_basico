@@ -37,7 +37,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv(credentialsId: 'SecretSonarQube', installationName: 'SonarQube') {
-                         bat ''' $SCANNER_HOME/bin/sonar-scanner \ 
+                    bat '''$SCANNER_HOME/bin/sonar-scanner \
                         //Se configura el repositorio con las configuraciones de Nexus
                         -Dsonar.projectKey=Ejercicio M3-L6 \
                         -Dsonar.projectName=Ejercicio M3-L6 \
